@@ -1,0 +1,108 @@
+.container{
+    height: 100%;
+    width: 100%;
+    display: grid ;
+    grid-template-rows: auto auto;
+    grid-auto-columns: auto auto ;
+}
+
+.login{
+    top: 0px;
+    width: 566px;
+    height: 760px;
+    z-index: 2;
+    background: #FAFAFA 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 48px #2C2C2C33;
+    border-radius: 30px 0px 0px 30px;
+    opacity: 1;
+    margin-left: auto;
+}
+.cubicom{
+    position: absolute;
+    z-index: 1;
+    width: 90%;
+    height: 80%;
+}
+
+.content{
+    padding-top: 35%;
+    text-align: center;
+}
+
+.welcomeFont{
+    font: normal normal bold 28px/34px proxima-nova;
+    letter-spacing: 0px;
+    color: #2C2C2C;
+    opacity: 1;
+}
+.subContentContainer{
+    margin-left: 23% ;
+}
+.subContent{
+    text-align: left;
+    font: normal normal normal 14px/17px Proxima Nova;
+    letter-spacing: 0px;
+    color: #B3B3B3;
+    opacity: 1;
+    padding-top: 10px;
+}
+.loginBackground{
+    background: #FAFAFA 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 48px #2C2C2C33;
+    border-radius: 30px 0px 0px 30px;
+    opacity: 1;
+}
+.form{
+    margin-left: 23%;
+    padding-top: 20px ;
+    color: #B3B3B3;
+
+}
+.checkbox{
+    background: #FAFAFA 0% 0% no-repeat padding-box;
+    border: 2px solid #8E8E8E;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.loginButton{
+    background-color: #00A29D;
+    color: #FAFAFA;
+    padding: 5px 30px;
+    width: 140px;
+    height: 32px;
+    font-weight: bold;
+    border-radius: 16px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px ;
+}
+.input{
+    width: 70%;
+    padding: 10px;
+    font-style: italic;
+    border: 1px solid #E1E1E1;
+    border-radius: 4px;
+}
+.dGrid{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 30% auto;
+    margin-top: 10px;
+}
+.textRight{
+    text-align: right;
+    margin-right: 40%;
+    font: normal normal bold 11px/13px Proxima Nova;
+}
+.marginTop{
+    margin-top: 20px ;
+}
+.rememberMe{
+    font: normal normal normal 14px/17px Proxima Nova;
+    padding-left: 5px ;
+}
+label{
+    font: normal normal normal 12px/15px Proxima Nova;
+}
