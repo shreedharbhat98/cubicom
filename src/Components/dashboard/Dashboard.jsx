@@ -144,12 +144,12 @@ class Dashboard extends Component {
                     </div>
                     <div className={styles.paginationBox}>
                         <div className={styles.pagination}>
-                            <a href="#">&#x3e;</a>
+                            <a href="#">&#x3c;</a>
                             <a href="#" className={styles.active}>1</a>
                             <a href="#">2</a>
                             <a href="#">3</a>
                             <a href="#">4</a>
-                            <a href="#">&#x3c;</a>
+                            <a href="#">&#x3e;</a>
                         </div>
                     </div>
                 </div>
