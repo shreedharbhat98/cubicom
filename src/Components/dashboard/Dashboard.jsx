@@ -1,11 +1,40 @@
 import React, { Component } from 'react';
 import styles from "./Dashboard.module.css";
+import Card from './Card';
+import Chart from './Chart';
+import Table from './Table';
 
 class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showSidebar: false
+            showSidebar: false,
+            cardsData: [
+                {
+                    number: 121,
+                    type: "BOOKING",
+                    desc: "No. of way bills",
+                    img: '/icon_booking.svg'
+                },
+                {
+                    number: 55,
+                    type: "OFD",
+                    desc: "Out for delivery",
+                    img: '/icon_ofd.svg'
+                },
+                {
+                    number: 430,
+                    type: "DEL",
+                    desc: "Deliveried",
+                    img: '/icon_booking.svg'
+                },
+                {
+                    number: 23,
+                    type: "UNDEL",
+                    desc: "Undeliveried",
+                    img: '/icon_booking.svg'
+                }
+            ]
         };
     }
 
@@ -16,7 +45,11 @@ class Dashboard extends Component {
         this.setState({ showSidebar: false })
     }
     render() {
-        const { showSidebar } = this.state;
+        const { showSidebar, cardsData } = this.state;
+        let styleObject = { marginLeft: "0px" }
+        if (showSidebar) {
+            styleObject.marginLeft = "250px"
+        }
         return (
             <div>
                 <div>
@@ -45,8 +78,8 @@ class Dashboard extends Component {
                                 </div>
                                 <div className={styles.bottomHide}>
                                     <div onClick={this.handleClose}>
-                                        <img src="/chevron_left.svg" alt="logo"/>
-                                        <img className={styles.bottomLogo} src="/chevron_left.svg" alt="logo"/>
+                                        <img src="/chevron_left.svg" alt="logo" />
+                                        <img className={styles.bottomLogo} src="/chevron_left.svg" alt="logo" />
                                     </div>
                                 </div>
                             </div>
@@ -72,12 +105,54 @@ class Dashboard extends Component {
                         </select>
                     </div>
                     <div className={styles.navbarRight}>
-
                         <div className={styles.circle}>
                         </div>
                     </div>
                 </div>
+                <div style={styleObject}>
+                    <div className={styles.container}>
+                        <div className={styles.dashboard}>Dashboard</div>
+                        <div className={styles.displayFlex}>
+                            <div className={styles.searchBtn}>
+                                <input className={styles.search} type="text" />
+                            </div>
+                            <div className={styles.calendar}>
+                                <div className={styles.displayFlex}>
+                                    <div>
+                                        <img src="/cal.svg" alt="calendar" />
+                                    </div>
+                                    <div>
+                                        <span className={styles.dateSpan}> 12/12/2019 - 18-12-2019 </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+
+                    <div className={styles.grid}>
+                        <div className={styles.cards}>
+                            {cardsData.map((item, index) => <Card key={index} data={item} />)}
+                        </div>
+                        <div className={styles.chart}>
+                            <Chart />
+                        </div>
+                    </div>
+                    <div className={styles.table}>
+                        <div className={styles.tableHead}>FE Performance</div>
+                        <Table />
+                    </div>
+                    <div className={styles.paginationBox}>
+                        <div className={styles.pagination}>
+                            <a href="#">&#x3e;</a>
+                            <a href="#" className={styles.active}>1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">&#x3c;</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
