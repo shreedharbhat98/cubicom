@@ -1,0 +1,19 @@
+.piechart {
+    display: block;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    margin-left: 2% ;
+    border-radius: 50%;
+    background-image: conic-gradient(
+        #E57373 90deg,
+        #FFD54F 0 130deg,
+        #81C784 0
+        );
+}
+
+.piechart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
