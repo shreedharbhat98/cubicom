@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import styles from "./Login.module.css";
+import { loginUserSuccess } from "../../Redux/actions";
+import { connect } from "react-redux";
+import { Redirect } from 'react-router-dom';
 
 class Login extends Component {
     constructor(props) {
@@ -17,10 +20,18 @@ class Login extends Component {
     }
 
     handleSubmit = () => {
-
+        const { loginUserSuccess } = this.props;
+        const { email, password } = this.state;
+        loginUserSuccess({ email: email, password: password })
     }
     render() {
         const { email, password } = this.state;
+        const { isAuth } = this.props;
+        if (isAuth) {
+            return (
+                <Redirect to="/Dashboard" />
+            )
+        }
         return (
             <div className={styles.container}>
                 <div className={styles.mainImageConatiner}>
@@ -36,7 +47,7 @@ class Login extends Component {
                         </div>
                     </div>
                     <div className={styles.form}>
-                        <form>
+                        <div>
                             <div className={styles.marginTop}>
                                 <label >Email</label><br />
                                 <input name="email" value={email} onChange={this.handleChange} className={styles.input} type="email" placeholder="Enter email" /><br />
@@ -54,7 +65,7 @@ class Login extends Component {
                                 </div>
                             </div>
                             <button onClick={this.handleSubmit} className={styles.loginButton}>Login</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,4 +73,12 @@ class Login extends Component {
     }
 }
 
-export default Login;
+const mapStateToProps = state => ({
+    isAuth: state.isAuth
+})
+
+const mapDispatchToProps = dispatch => ({
+    loginUserSuccess: payload => dispatch(loginUserSuccess(payload))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

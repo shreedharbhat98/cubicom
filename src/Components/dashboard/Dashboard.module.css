@@ -1,0 +1,91 @@
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    width : 250px;
+    margin-top: 80px ;
+    background-color: #F5F5F5;
+  }
+
+
+
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    color: #444;
+    padding: 10px 15px;
+    border: none;
+    background-color: white;
+
+  }
+
+
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+    background-color: white;
+  }
+  .navbarItems{
+      padding: 10px 20px;
+  }
+  .dFlex{
+      display: flex;
+      box-shadow: 0px 1px 6px #2C2C2C1C;
+  }
+  .cubicom{
+      padding: 15px;
+  }
+  .navbarRight{
+      margin-left: auto;
+  }
+  .navbarSelect{
+      margin-left: auto;
+      margin-right:-60% ;
+      padding: 20px;
+  }
+  .select{
+      padding-top: 7px;
+      padding-bottom: 7px ;
+      padding-left:5px ;
+      padding-right: 100px;
+      border-radius: 4px;
+      opacity: 1;
+      border: 1px solid #CACACA ;
+      background-color: white;
+  }
+  .circle{
+      height: 50px ;
+      width: 50px;
+      border-radius: 50%;
+      color: black;
+      margin: 10px;
+      background-color: black;
+  }
+  .displayFlex{
+      display: flex;
+  }
+  .logos{
+      min-width: 25px;
+  }
+
+  .bottomHide{
+      margin-top: 230%;
+      margin-left: 200px;
+  }
+.bottomLogo{
+    margin-left: -10px;
+    cursor: pointer;
+}
